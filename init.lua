@@ -442,12 +442,13 @@ require('mason-lspconfig').setup()
 --  define the property 'filetypes' to the map in question.
 local servers = {
   eslint = {},
+  cssls = {},
+  pylsp = {},
   gopls = {},
   tailwindcss = {},
   jdtls = {},
   rust_analyzer = {},
   tsserver = {},
-  nextls = {},
   html = { filetypes = { 'html', 'twig', 'hbs'} },
   lua_ls = {
     Lua = {
