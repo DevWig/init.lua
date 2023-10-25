@@ -1,19 +1,19 @@
 --[[
-
-=====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
-
-  If you don't know anything about Lua, I recommend taking some time to read through
-  a guide. One possible example:
   - https://learnxinyminutes.com/docs/lua/
-
 
   And then you can explore or search through `:help lua-guide`
   - https://neovim.io/doc/user/lua-guide.html
-
 --]]
+
+
 require("devwig")
+-- Disable netrw at the very start of init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -49,6 +49,11 @@ require('lazy').setup({
   -- Set backgrounds transparent
   'xiyaowong/transparent.nvim',
 
+  -- File Explorer Tree for Nvim
+  'nvim-tree/nvim-tree.lua',
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+  },
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -264,6 +269,18 @@ require('telescope').setup {
     },
   },
 }
+
+require("nvim-tree").setup({
+  view = {
+    width = 30, 
+  },
+  renderer = {
+    group_empty = true,
+  },
+  filters = {
+    dotfiles = true,
+  },
+})
 
 require('transparent').setup({
   groups = {
