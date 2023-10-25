@@ -8,12 +8,8 @@
 
 require("devwig")
 -- Disable netrw at the very start of init.lua
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
--- set termguicolors to enable highlight groups
-vim.opt.termguicolors = true
-
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -39,6 +35,19 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
+   -- Git related plugins
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+
+  -- Detect tabstop and shiftwidth automatically
+  'tpope/vim-sleuth',
+
+  -- Set backgrounds transparent
+  'xiyaowong/transparent.nvim',
+
+  -- Harpoon file navigation made by ThePrimeagen
+  'ThePrimeagen/harpoon',
+
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
@@ -49,12 +58,10 @@ require('lazy').setup({
   -- Set backgrounds transparent
   'xiyaowong/transparent.nvim',
 
-  -- File Explorer Tree for Nvim
-  'nvim-tree/nvim-tree.lua',
-  dependencies = {
-    'nvim-tree/nvim-web-devicons',
-  },
-  -- NOTE: This is where your plugins related to LSP can be installed.
+  -- Harpoon file navigation made by ThePrimeagen
+  'ThePrimeagen/harpoon',
+
+    -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
     -- LSP Configuration & Plugins
@@ -195,19 +202,9 @@ require('lazy').setup({
     build = ':TSUpdate',
   },
 
-  -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
-  --       These are some example plugins that I've included in the kickstart repository.
-  --       Uncomment any of the lines below to enable them.
-  -- require 'kickstart.plugins.autoformat',
-  -- require 'kickstart.plugins.debug',
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    You can use this folder to prevent any conflicts with this init.lua if you're interested in keeping
-  --    up-to-date with whatever is in the kickstart repo.
-  --    Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  --
-  --    For additional information see: https://github.com/folke/lazy.nvim#-structuring-your-plugins
-  -- { import = 'custom.plugins' },
+  -- Add your plugins to `lua/devwig/plugins/*.lua'
+  { import = 'devwig.plugins' },
 }, {})
 
 -- [[ Setting options ]]
@@ -222,10 +219,6 @@ vim.wo.number = true
 
 -- Enable break indent
 vim.o.breakindent = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
 
 -- Keep signcolumn on by default
 vim.wo.signcolumn = 'yes'
