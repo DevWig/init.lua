@@ -8,9 +8,6 @@
 
 require("devwig")
 -- Disable netrw at the very start of init.lua
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
-
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -54,9 +51,6 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
-  -- Set backgrounds transparent
-  'xiyaowong/transparent.nvim',
 
   -- Harpoon file navigation made by ThePrimeagen
   'ThePrimeagen/harpoon',
@@ -143,6 +137,8 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       vim.cmd.colorscheme 'onedark'
+      transparent = true
+
     end,
   },
 
@@ -263,25 +259,16 @@ require('telescope').setup {
   },
 }
 
-require("nvim-tree").setup({
-  view = {
-    width = 30, 
-  },
-  renderer = {
-    group_empty = true,
-  },
-  filters = {
-    dotfiles = true,
-  },
-})
-
 require('transparent').setup({
   groups = {
     'Normal', 'NormalNC', 'Comment', 'Constant', 'Special', 'Identifier',
     'Statement', 'PreProc', 'Type', 'Underlined', 'Todo', 'String', 'Function',
     'Conditional', 'Repeat', 'Operator', 'Structure', 'LineNr', 'NonText',
     'SignColumn', 'CursorLineNr', 'EndOfBuffer',
-  }
+  },
+  extra_groups = {
+    "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+  },
 })
 
 -- Enable telescope fzf native, if installed
@@ -312,7 +299,9 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash', 'java', 'css', 'html', 'sql' },
+    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript',
+      'typescript', 'vimdoc', 'vim', 'bash', 'java', 'css', 'html', 'sql'
+    },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
