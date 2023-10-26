@@ -4,8 +4,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>pvv", vim.cmd.Vex)
 vim.keymap.set("n", "<leader>tty", vim.cmd.TransparentToggle)
 
-vim.keymap.set("n", "<leader>nvtt", vim.cmd.NvimTreeToggle)
-vim.keymap.set("n", "<leader>nvtf", vim.cmd.NvimTreeFindFile)
+vim.keymap.set("n", "<leader>tt", vim.cmd.Neotree)
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '>-2<CR>gv=gv")
