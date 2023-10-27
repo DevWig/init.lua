@@ -208,9 +208,10 @@ require('transparent').setup({
     'SignColumn', 'CursorLineNr', 'EndOfBuffer',
   },
   extra_groups = {
-    "NormalFloat", -- plugins which have float panel such as Lazy, Mason, LspInfo
+    "NormalFloat", "NeoTreeNormal", "NeoTreeNormalNC",
   },
 })
+require('transparent').clear_prefix('NeoTree')
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
