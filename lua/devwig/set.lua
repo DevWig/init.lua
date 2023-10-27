@@ -1,4 +1,5 @@
 vim.opt.nu = true
+-- vim.wo.number = true
 vim.opt.relativenumber = true
 
 vim.opt.tabstop = 2
@@ -22,6 +23,7 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
+vim.wo.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 -- Decrease update time
@@ -41,3 +43,10 @@ vim.o.clipboard = 'unnamedplus'
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
 vim.o.smartcase = true
+
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
