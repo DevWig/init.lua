@@ -7,7 +7,8 @@
 
 
 require("devwig")
--- Disable netrw at the very start of init.lua
+
+
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -32,7 +33,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-   -- Git related plugins
+  -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
@@ -51,9 +52,6 @@ require('lazy').setup({
 
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
-
-  -- Harpoon file navigation made by ThePrimeagen
-  'ThePrimeagen/harpoon',
 
     -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -150,6 +148,7 @@ require('lazy').setup({
       options = {
         icons_enabled = false,
         theme = 'onedark',
+        path = 1,
         component_separators = '|',
         section_separators = '',
       },
@@ -227,13 +226,6 @@ vim.o.termguicolors = true
 
 -- [[ Basic Keymaps ]]
 
--- Keymaps for better default experience
--- See `:help vim.keymap.set()`
-vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
-
--- Remap for dealing with word wrap
-vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
-vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
