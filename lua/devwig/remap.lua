@@ -6,7 +6,7 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>pvv", vim.cmd.Vex)
 vim.keymap.set("n", "<leader>tty", vim.cmd.TransparentToggle)
 vim.keymap.set("n", "<leader>nft", vim.cmd.tabnew)
-vim.keymap.set("n", "<leader>tt", vim.cmd.Neotree)
+vim.keymap.set("n", "<leader>tt", "<cmd>Neotree toggle<CR>")
 vim.keymap.set("n", "<leader>ttg", "<cmd>Neotree float git_status<CR>")
 
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
