@@ -43,9 +43,6 @@ require('lazy').setup({
   -- Set backgrounds transparent
   'xiyaowong/transparent.nvim',
 
-  -- Harpoon file navigation made by ThePrimeagen
-  'ThePrimeagen/harpoon',
-
   -- Git related plugins
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',

@@ -63,3 +63,5 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set("n", "<leader><leader>", function()
 	vim.cmd("so")
 end)
+
+
