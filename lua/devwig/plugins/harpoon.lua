@@ -4,7 +4,16 @@ return {
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 	},
-	config = true,
+
+	config = function()
+		require('harpoon').setup({
+			menu = {
+				width = 100,
+				height = 25,
+			}
+		})
+	end,
+
 	keys = {
 		{ "<leader>af", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
 		{ "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Go to next harpoon mark" },
