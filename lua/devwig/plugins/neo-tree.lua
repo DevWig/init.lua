@@ -17,6 +17,13 @@ return {
       window = {
         width = 30,
         position = "left"
+      },
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        }
       }
     })
   end,
