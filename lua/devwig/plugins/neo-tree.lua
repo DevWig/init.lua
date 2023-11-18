@@ -15,14 +15,14 @@ return {
         statusline = false
       },
       window = {
-        width = 30,
-        position = "left"
+        width = 50,
+        position = "float"
       },
       filesystem = {
         filtered_items = {
           visible = true,
           hide_dotfiles = false,
-          hide_gitignored = true,
+          hide_gitignored = false,
         }
       }
     })
