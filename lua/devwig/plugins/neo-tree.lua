@@ -23,7 +23,8 @@ return {
           visible = true,
           hide_dotfiles = false,
           hide_gitignored = false,
-        }
+        },
+        hijack_netrw_behavior = "disabled",
       }
     })
   end,
