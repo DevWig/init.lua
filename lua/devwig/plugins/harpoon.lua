@@ -1,5 +1,5 @@
 return {
-	"ThePrimeagen/harpoon",
+	"theprimeagen/harpoon",
 	lazy = false,
 	branch = "harpoon2",
 	dependencies = {
@@ -7,18 +7,11 @@ return {
 	},
 
 	config = function()
-		require('harpoon').setup({
-			menu = {
-				width = 100,
-				height = 25,
-			}
-		})
-	end,
+		local harpoon = require('harpoon')
+		harpoon:setup()
 
-	keys = {
-		{ "<leader>a", "<cmd>lua require('harpoon.mark').add_file()<cr>", desc = "Mark file with harpoon" },
-		{ "<leader>hn", "<cmd>lua require('harpoon.ui').nav_next()<cr>", desc = "Go to next harpoon mark" },
-		{ "<leader>hp", "<cmd>lua require('harpoon.ui').nav_prev()<cr>", desc = "Go to previous harpoon mark" },
-		{ "<C-e>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", desc = "Show harpoon marks" },
-	},
+		vim.keymap.set("n", "<leader>a", function() harpoon:list():append() end)
+		vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+
+ end,
 }
