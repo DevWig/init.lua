@@ -1,5 +1,5 @@
 return {
-	"theprimeagen/harpoon",
+	"hackastak/harpoon",
 	lazy = false,
 	branch = "harpoon2",
 	dependencies = {

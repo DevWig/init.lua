@@ -6,7 +6,7 @@
 --]]
 
 
-require("devwig")
+require("hackastak")
 
 
 -- Install package manager
@@ -169,8 +169,8 @@ require('lazy').setup({
     },
   },
 
-  -- Add your plugins to `lua/devwig/plugins/*.lua'
-  { import = 'devwig.plugins' },
+  -- Add your plugins to `lua/hackastak/plugins/*.lua'
+  { import = 'hackastak.plugins' },
 }, {})
 
 -- [[ Highlight on yank ]]
