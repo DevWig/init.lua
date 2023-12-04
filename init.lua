@@ -1,17 +1,5 @@
---[[
-  - https://learnxinyminutes.com/docs/lua/
+require("hackastak")
 
-  And then you can explore or search through `:help lua-guide`
-  - https://neovim.io/doc/user/lua-guide.html
---]]
-
-
-require("devwig")
-
-
--- Install package manager
---    https://github.com/folke/lazy.nvim
---    `:help lazy.nvim.txt` for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system {
@@ -25,30 +13,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- NOTE: Here is where you install your plugins.
---  You can configure plugins using the `config` key.
---
---  You can also configure plugins after the setup call,
---    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
 
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
-
-  -- Set backgrounds transparent
-  'xiyaowong/transparent.nvim',
-
-  -- Git related plugins
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
+  'tpope/vim-fugitive', -- Premier Git plugin for vim
+  'tpope/vim-rhubarb', -- GitHub extension for fugitive
+  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'xiyaowong/transparent.nvim', -- Set backgrounds transparent
 
     -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
@@ -133,7 +104,6 @@ require('lazy').setup({
     config = function()
       vim.cmd.colorscheme 'onedark'
       transparent = true
-
     end,
   },
   {
@@ -170,7 +140,7 @@ require('lazy').setup({
   },
 
   -- Add your plugins to `lua/devwig/plugins/*.lua'
-  { import = 'devwig.plugins' },
+  { import = 'hackastak.plugins' },
 }, {})
 
 -- [[ Highlight on yank ]]
