@@ -2,8 +2,9 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 vim.keymap.set("n", "<C-s>", vim.cmd.w)
-vim.keymap.set("n", "<leader>pve", vim.cmd.Ex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 vim.keymap.set("n", "<leader>pvv", vim.cmd.Vex)
+vim.keymap.set("n", "<leader>pvh", vim.cmd.Hex)
 vim.keymap.set("n", "<leader>tty", vim.cmd.TransparentToggle)
 vim.keymap.set("n", "<leader>nft", vim.cmd.tabnew)
 vim.keymap.set("n", "<leader>tt", "<cmd>Neotree toggle<CR>")

@@ -4,9 +4,9 @@ vim.opt.guicursor = ""
 vim.opt.splitbelow = true -- force all horizontal splits to go below current window
 vim.opt.splitright = true -- force all vertical splits to go to the right of current window
 
-vim.opt.tabstop = 4 -- insert spaces for tab while editing
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4 -- # of spaces for each indentation
+vim.opt.tabstop = 2 -- insert spaces for tab while editing
+vim.opt.softtabstop = 2
+vim.opt.shiftwidth = 2 -- # of spaces for each indentation
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
@@ -28,7 +28,7 @@ vim.wo.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50 -- decrease update time
 
-vim.opt.timeoutlen = 1000 --time to wait for a mapped sequence to complete in milliseconds
+vim.opt.timeoutlen = 200 --time to wait for a mapped sequence to complete in milliseconds
 vim.opt.colorcolumn = "" -- set a color column for the right margin (default: "")
 vim.opt.mouse = 'a' -- enable mouse in all modes, for more options see :help 'mouse'
 vim.opt.clipboard = 'unnamedplus' -- sync clipboard with system clipboard
